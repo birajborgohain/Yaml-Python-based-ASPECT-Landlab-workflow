@@ -284,31 +284,6 @@ python run_ASPECT.py
 -   Flexible coupling architecture
 -   Minimal manual editing
 
-# Core Technologies
-
-  ---------------------------------------------------
-  Technology         Role
-  ------------------ --------------------------------
-  Python             Automation and coupling
-
-  YAML               Experiment configuration
-
-  MPI (`mpi4py`)     Parallel communication
-
-  ASPECT             Geodynamics
-
-  Landlab            Surface processes
-  ---------------------------------------------------
-
-# Future Extensions
-
-Potential additions include:
-
--   Advanced erosion models
--   Adaptive coupling strategies
--   Parallel Landlab execution
--   HPC workflow integration
--   Machine-learning-assisted parameter exploration
 
 # References
 

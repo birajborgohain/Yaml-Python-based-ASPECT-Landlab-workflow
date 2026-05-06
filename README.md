@@ -1,4 +1,4 @@
-# ASPECT--Landlab Coupling Framework
+# Python based workflow for ASPECT-Landlab Coupling Framework
 
 A Python-driven workflow for coupling geodynamic simulations in ASPECT
 with surface-process modeling in Landlab using YAML-based automation,
@@ -49,19 +49,13 @@ project_root/
 
 # Main Components
 
-  ----------------------------------------------------------------------
-  Component                  Purpose
-  -------------------------- -------------------------------------------
-  ASPECT                     Geodynamic simulation engine
-
-  Landlab                    Surface process and topography evolution
-
-  `experiments.yaml`         Central experiment configuration
-
-  `run_ASPECT.py`            Workflow automation and execution
-
-  Templates                  Simulation input generation
-  ----------------------------------------------------------------------
+| Component | Purpose |
+|---|---|
+| ASPECT | Geodynamic simulation engine |
+| Landlab | Surface process and topography evolution |
+| `experiments.yaml` | Central experiment configuration |
+| `run_ASPECT.py` | Workflow automation and execution |
+| Templates | `.prm` and `.py` files with `{placeholder}` |
 
 # Key Features
 

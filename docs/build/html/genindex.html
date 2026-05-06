@@ -1,0 +1,189 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Index &mdash; ASPECT-Landlab Test Python Framework 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=a08a6671" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=2709fde1"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="#" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            ASPECT-Landlab Test Python Framework
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#architecture-and-key-components">Architecture and Key Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#problem-lack-of-automation-in-aspect-workflows">Problem: Lack of Automation in ASPECT Workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#approach-placeholder-based-parameterization">Approach: Placeholder-Based Parameterization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#output-automated-and-structured-simulation-runs">Output: Automated and Structured Simulation Runs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="requirement.html">Requirements</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="requirement.html#install-and-compile-aspectlandlab">Install and Compile ASPECT–Landlab</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="requirement.html#required-file-structure">Required File Structure</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="requirement.html#file-descriptions">File Descriptions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="requirement.html#experiments-yaml">1. experiments.yaml</a></li>
+<li class="toctree-l3"><a class="reference internal" href="requirement.html#run-aspect-py">2. run_ASPECT.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="requirement.html#template-prm">3. template.prm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="requirement.html#import-template-py">4. import-template.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="requirement.html#landlab-template-py">5. landlab_template.py</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="requirement.html#workflow">Workflow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="requirement.html#define-experiments-in-experiments-yaml">1. Define experiments in <code class="docutils literal notranslate"><span class="pre">experiments.yaml</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="requirement.html#run-the-main-script">2. Run the main script::</a></li>
+<li class="toctree-l3"><a class="reference internal" href="requirement.html#for-each-experiment">3. For each experiment:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="requirement.html#how-it-works-conceptual">How It Works (Conceptual)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="requirement.html#notes">Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="requirement.html#use-cases">Use Cases</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Setup Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#python-environment-uv">1. Python Environment (uv)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#install-aspect-with-python-support">2. Install ASPECT with Python Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#coupling-mechanism-c-python">3. Coupling Mechanism (C++ ↔ Python)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#python-script-landlab-side">4. Python Script (Landlab Side)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#aspect-prm-configuration-essential-parts">5. ASPECT .prm Configuration (Essential Parts)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#key-execution-flow">6. Key Execution Flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#important-notes">7. Important Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#minimal-run-command">8. Minimal Run Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="experiments.yaml.html"><code class="docutils literal notranslate"><span class="pre">experiments.yaml</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="experiments.yaml.html#yaml-based-experiment-configuration">YAML-Based Experiment Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experiments.yaml.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experiments.yaml.html#what-is-yaml">What is YAML?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experiments.yaml.html#why-yaml-is-chosen">Why YAML is Chosen?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experiments.yaml.html#alternative-formats-considered">Alternative Formats Considered</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experiments.yaml.html#integration-with-aspectlandlab-workflow">Integration with ASPECT–Landlab Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experiments.yaml.html#final-outcome">Final Outcome</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="run_ASPECT.py.html"><code class="docutils literal notranslate"><span class="pre">run_ASPECT.py</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="run_ASPECT.py.html#run-automation-script-run-aspect-py">Run Automation Script (run_ASPECT.py)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="run_ASPECT.py.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="run_ASPECT.py.html#directory-structure">Directory Structure</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="run_ASPECT.py.html#key-components">Key Components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="run_ASPECT.py.html#path-configuration">Path Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="run_ASPECT.py.html#configuration-loader-loop-and-final-output">Configuration Loader, Loop and Final Output</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="run_ASPECT.py.html#template-rendering-system">Template Rendering System</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="run_ASPECT.py.html#main-execution-workflow">Main Execution Workflow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="run_ASPECT.py.html#load-configuration">1. Load Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="run_ASPECT.py.html#read-templates">2. Read Templates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="run_ASPECT.py.html#prepare-execution-parameters">3. Prepare Execution Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="run_ASPECT.py.html#loop-over-simulation-runs">4. Loop Over Simulation Runs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="run_ASPECT.py.html#environment-setup">5. Environment Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="run_ASPECT.py.html#simulation-execution">6. Simulation Execution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="run_ASPECT.py.html#logging-and-error-handling">7. Logging and Error Handling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="run_ASPECT.py.html#design-highlights">Design Highlights</a></li>
+<li class="toctree-l3"><a class="reference internal" href="run_ASPECT.py.html#integration-in-coupling-workflow">Integration in Coupling Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="run_ASPECT.py.html#final-remarks">Final Remarks</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ASPECT-Landlab Test Python Framework</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Index</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+
+<h1 id="index">Index</h1>
+
+<div class="genindex-jumpbox">
+ 
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Biraj Borgohain.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

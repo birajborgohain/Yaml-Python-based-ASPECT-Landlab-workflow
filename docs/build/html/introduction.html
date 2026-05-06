@@ -1,0 +1,334 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction &mdash; ASPECT-Landlab Test Python Framework 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=a08a6671" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=2709fde1"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Requirements" href="requirement.html" />
+    <link rel="prev" title="Python-Based Automation Framework for Testing ASPECT–Landlab Coupled Simulations" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            ASPECT-Landlab Test Python Framework
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#architecture-and-key-components">Architecture and Key Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#problem-lack-of-automation-in-aspect-workflows">Problem: Lack of Automation in ASPECT Workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#approach-placeholder-based-parameterization">Approach: Placeholder-Based Parameterization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#output-automated-and-structured-simulation-runs">Output: Automated and Structured Simulation Runs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="requirement.html">Requirements</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="requirement.html#install-and-compile-aspectlandlab">Install and Compile ASPECT–Landlab</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="requirement.html#required-file-structure">Required File Structure</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="requirement.html#file-descriptions">File Descriptions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="requirement.html#experiments-yaml">1. experiments.yaml</a></li>
+<li class="toctree-l3"><a class="reference internal" href="requirement.html#run-aspect-py">2. run_ASPECT.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="requirement.html#template-prm">3. template.prm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="requirement.html#import-template-py">4. import-template.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="requirement.html#landlab-template-py">5. landlab_template.py</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="requirement.html#workflow">Workflow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="requirement.html#define-experiments-in-experiments-yaml">1. Define experiments in <code class="docutils literal notranslate"><span class="pre">experiments.yaml</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="requirement.html#run-the-main-script">2. Run the main script::</a></li>
+<li class="toctree-l3"><a class="reference internal" href="requirement.html#for-each-experiment">3. For each experiment:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="requirement.html#how-it-works-conceptual">How It Works (Conceptual)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="requirement.html#notes">Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="requirement.html#use-cases">Use Cases</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Setup Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#python-environment-uv">1. Python Environment (uv)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#install-aspect-with-python-support">2. Install ASPECT with Python Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#coupling-mechanism-c-python">3. Coupling Mechanism (C++ ↔ Python)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#python-script-landlab-side">4. Python Script (Landlab Side)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#aspect-prm-configuration-essential-parts">5. ASPECT .prm Configuration (Essential Parts)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#key-execution-flow">6. Key Execution Flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#important-notes">7. Important Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#minimal-run-command">8. Minimal Run Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="experiments.yaml.html"><code class="docutils literal notranslate"><span class="pre">experiments.yaml</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="experiments.yaml.html#yaml-based-experiment-configuration">YAML-Based Experiment Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experiments.yaml.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experiments.yaml.html#what-is-yaml">What is YAML?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experiments.yaml.html#why-yaml-is-chosen">Why YAML is Chosen?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experiments.yaml.html#alternative-formats-considered">Alternative Formats Considered</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experiments.yaml.html#integration-with-aspectlandlab-workflow">Integration with ASPECT–Landlab Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experiments.yaml.html#final-outcome">Final Outcome</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="run_ASPECT.py.html"><code class="docutils literal notranslate"><span class="pre">run_ASPECT.py</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="run_ASPECT.py.html#run-automation-script-run-aspect-py">Run Automation Script (run_ASPECT.py)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="run_ASPECT.py.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="run_ASPECT.py.html#directory-structure">Directory Structure</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="run_ASPECT.py.html#key-components">Key Components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="run_ASPECT.py.html#path-configuration">Path Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="run_ASPECT.py.html#configuration-loader-loop-and-final-output">Configuration Loader, Loop and Final Output</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="run_ASPECT.py.html#template-rendering-system">Template Rendering System</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="run_ASPECT.py.html#main-execution-workflow">Main Execution Workflow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="run_ASPECT.py.html#load-configuration">1. Load Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="run_ASPECT.py.html#read-templates">2. Read Templates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="run_ASPECT.py.html#prepare-execution-parameters">3. Prepare Execution Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="run_ASPECT.py.html#loop-over-simulation-runs">4. Loop Over Simulation Runs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="run_ASPECT.py.html#environment-setup">5. Environment Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="run_ASPECT.py.html#simulation-execution">6. Simulation Execution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="run_ASPECT.py.html#logging-and-error-handling">7. Logging and Error Handling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="run_ASPECT.py.html#design-highlights">Design Highlights</a></li>
+<li class="toctree-l3"><a class="reference internal" href="run_ASPECT.py.html#integration-in-coupling-workflow">Integration in Coupling Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="run_ASPECT.py.html#final-remarks">Final Remarks</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ASPECT-Landlab Test Python Framework</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Introduction</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/introduction.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="index.html" class="btn btn-neutral float-left" title="Python-Based Automation Framework for Testing ASPECT–Landlab Coupled Simulations" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="requirement.html" class="btn btn-neutral float-right" title="Requirements" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>The ASPECT–Landlab coupling framework is designed to integrate large-scale
+geodynamic simulations with surface process modeling in a flexible and
+reproducible way. At its core, the workflow is driven by a YAML-based
+configuration system that defines experiment parameters, simulation variants,
+and run conditions in a structured and human-readable format. The
+<code class="docutils literal notranslate"><span class="pre">run_ASPECT.py</span></code> script acts as the central orchestration engine: it parses
+the YAML configuration, generates ASPECT <code class="docutils literal notranslate"><span class="pre">.prm</span></code> input files, organizes
+simulation directories, and launches coupled simulations. During runtime,
+ASPECT handles lithospheric deformation and thermomechanical processes,
+while Landlab is embedded as a surface process component to simulate
+landscape evolution. This modular design enables systematic parameter
+exploration and seamless coupling between tectonics and surface processes.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/introduction_YAML_run_ASPECT_Coupling_Landlab_ASPECT_.png"><img alt="_images/introduction_YAML_run_ASPECT_Coupling_Landlab_ASPECT_.png" src="_images/introduction_YAML_run_ASPECT_Coupling_Landlab_ASPECT_.png" style="width: 1000px;" />
+</a>
+</figure>
+</section>
+<section id="architecture-and-key-components">
+<h2>Architecture and Key Components<a class="headerlink" href="#architecture-and-key-components" title="Link to this heading"></a></h2>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">ASPECT–Landlab Coupling Framework</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 18.0%" />
+<col style="width: 42.0%" />
+<col style="width: 40.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Link</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ASPECT</p></td>
+<td><ul class="simple">
+<li><p><strong>File type:</strong> <code class="docutils literal notranslate"><span class="pre">.prm</span></code> and <code class="docutils literal notranslate"><span class="pre">.cc</span></code></p></li>
+<li><p><strong>Origin:</strong> Existing software</p></li>
+<li><p>Finite element geodynamics code</p></li>
+<li><p>Models mantle convection &amp; lithosphere deformation</p></li>
+<li><p>Controls temperature, stress, and velocity fields</p></li>
+</ul>
+</td>
+<td><p><a class="reference external" href="https://aspect.geodynamics.org">https://aspect.geodynamics.org</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Landlab</p></td>
+<td><ul class="simple">
+<li><p><strong>File type:</strong> <code class="docutils literal notranslate"><span class="pre">.py</span></code></p></li>
+<li><p><strong>Origin:</strong> Existing software</p></li>
+<li><p>Python toolkit for surface processes</p></li>
+<li><p>Simulates erosion and sediment transport</p></li>
+<li><p>Evolves topography coupled to ASPECT</p></li>
+</ul>
+</td>
+<td><p><a class="reference external" href="https://landlab.readthedocs.io">Link to web page</a></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">experiments.yaml</span></code></p></td>
+<td><ul class="simple">
+<li><p><strong>File type:</strong> <code class="docutils literal notranslate"><span class="pre">.yaml</span></code></p></li>
+<li><p><strong>Origin:</strong> This project</p></li>
+<li><p>Defines parameter sweeps and run IDs</p></li>
+<li><p>Central configuration for experiments</p></li>
+</ul>
+</td>
+<td><p><a class="reference internal" href="experiments.yaml.html"><span class="doc">Link to the file</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">run_ASPECT.py</span></code></p></td>
+<td><ul class="simple">
+<li><p><strong>File type:</strong> <code class="docutils literal notranslate"><span class="pre">.py</span></code></p></li>
+<li><p><strong>Origin:</strong> This project</p></li>
+<li><p>Workflow orchestration script</p></li>
+<li><p>Parses <code class="docutils literal notranslate"><span class="pre">.yaml</span></code> and builds <code class="docutils literal notranslate"><span class="pre">.prm</span></code> files</p></li>
+<li><p>Launches simulations and manages runs</p></li>
+</ul>
+</td>
+<td><p><a class="reference internal" href="run_ASPECT.py.html"><span class="doc">Link to the file</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>GitHub</p></td>
+<td><ul class="simple">
+<li><p>Stores code, configs, and docs</p></li>
+<li><p>Enables reproducibility</p></li>
+</ul>
+</td>
+<td><p>(add repo link)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="problem-lack-of-automation-in-aspect-workflows">
+<h2>Problem: Lack of Automation in ASPECT Workflows<a class="headerlink" href="#problem-lack-of-automation-in-aspect-workflows" title="Link to this heading"></a></h2>
+<p>The problem we address is the lack of a flexible and automated workflow for
+running multiple simulations in ASPECT. Existing scripts such as
+<code class="docutils literal notranslate"><span class="pre">.prm</span></code> of ASPECT and <code class="docutils literal notranslate"><span class="pre">.py</span></code> of Landlab often rely on hardcoded parameters, fixed paths, and manual
+setup, making it difficult to manage experiments, explore parameter variations,
+and ensure reproducibility.</p>
+<p>By introducing a pythom-based (<code class="docutils literal notranslate"><span class="pre">experiments.yaml``+</span> <span class="pre">``run_ASPECT.py</span></code>) configuration system, this project externalizes all
+parameters into a structured format. This enables simulations to be generated,
+organized, and executed automatically in a consistent and scalable manner.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/problem_manual_repetitive.png"><img alt="_images/problem_manual_repetitive.png" src="_images/problem_manual_repetitive.png" style="width: 1000px;" />
+</a>
+</figure>
+</section>
+<section id="approach-placeholder-based-parameterization">
+<h2>Approach: Placeholder-Based Parameterization<a class="headerlink" href="#approach-placeholder-based-parameterization" title="Link to this heading"></a></h2>
+<p>To address the lack of automation in ASPECT workflows, we adopt a
+placeholder-based parameterization strategy within the core coupling layer
+files (<code class="docutils literal notranslate"><span class="pre">.prm</span></code> and <code class="docutils literal notranslate"><span class="pre">.py</span></code>). Instead of hardcoding values, key parameters are
+represented as placeholders that are dynamically replaced at runtime using a
+pythom-based (<code class="docutils literal notranslate"><span class="pre">run_ASPECT.py</span></code> + <code class="docutils literal notranslate"><span class="pre">experiments.yaml</span></code>) configuration system. This design enables efficient parsing and generation of
+multiple parameter combinations, allowing systematic exploration of model
+scenarios. As a result, diverse geodynamic–surface process coupling experiments
+can be set up, executed, and tested in a consistent and scalable manner,
+significantly reducing manual effort and improving reproducibility.</p>
+<p>In the figure below, placeholders are highlighted in red. Their corresponding
+values and string substitutions are automatically injected into the <code class="docutils literal notranslate"><span class="pre">.prm</span></code>
+and <code class="docutils literal notranslate"><span class="pre">.py</span></code> files during runtime, enabling seamless execution of the coupling
+simulation.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/ASPECT_Landlab_prm_py_YAML_run_ASPECT_py.png"><img alt="_images/ASPECT_Landlab_prm_py_YAML_run_ASPECT_py.png" src="_images/ASPECT_Landlab_prm_py_YAML_run_ASPECT_py.png" style="width: 1000px;" />
+</a>
+</figure>
+</section>
+<section id="output-automated-and-structured-simulation-runs">
+<h2>Output: Automated and Structured Simulation Runs<a class="headerlink" href="#output-automated-and-structured-simulation-runs" title="Link to this heading"></a></h2>
+<p>The final output of this approach is a fully automated and well-organized set
+of simulation runs, where each parameter combination is executed in a dedicated
+run directory. For every run, the system generates the corresponding <code class="docutils literal notranslate"><span class="pre">.prm</span></code>
+and <code class="docutils literal notranslate"><span class="pre">.py</span></code> files with all placeholders resolved, along with associated model
+outputs such as topography and surface evolution data. This structured setup
+enables easy comparison across experiments, improves traceability of parameter
+choices, and ensures reproducible geodynamic–surface process coupling results.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/YAML_RUN_ASPECT_output_folders.png"><img alt="_images/YAML_RUN_ASPECT_output_folders.png" src="_images/YAML_RUN_ASPECT_output_folders.png" style="width: 1000px;" />
+</a>
+</figure>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Python-Based Automation Framework for Testing ASPECT–Landlab Coupled Simulations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="requirement.html" class="btn btn-neutral float-right" title="Requirements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Biraj Borgohain.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

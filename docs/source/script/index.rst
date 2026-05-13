@@ -2,28 +2,62 @@ Scripts and software versions
 ==================================================================================
 
 
-
-
 Software Versions
 -----------------
 
-    .. code-block:: text
+.. list-table:: Software versions used in this project
+   :widths: 45 55
+   :header-rows: 1
 
-        -----------------------------------------------------------------------------
-        --                             This is ASPECT                              --
-        -- The Advanced Solver for Planetary Evolution, Convection, and Tectonics. --
-        -----------------------------------------------------------------------------
-        --     . version 3.1.0-pre (pr43, 23ad3f3ba)
-        --     . using deal.II 9.7.0
-        --     .       with 32 bit indices
-        --     .       with vectorization level 1 (SSE2, 2 doubles, 128 bits)
-        --     . using Trilinos 16.2.0
-        --     . using p4est 2.8.7
-        --     . using Geodynamic World Builder 1.0.0
-        --     . running in OPTIMIZED mode
-        --     . running with 25 MPI processes
+   * - Software
+     - Version
+
+   * - ASPECT
+     - 3.1.0-pre (23ad3f3ba)
+
+   * - deal.II
+     - 9.7.0
+
+   * - Trilinos
+     - 16.2.0
+
+   * - p4est
+     - 2.8.7
+
+   * - World Builder
+     - 1.0.0
+
+   * - MPI Processes
+     - 25
 
 
+Python Environment and Scientific Libraries
+-------------------------------------------
+
+.. list-table:: Python environment and external scientific libraries used in this project
+   :widths: 45 55
+   :header-rows: 1
+
+   * - Library / Tool
+     - Version
+
+   * - Python
+     - 3.12.13
+
+   * - UV
+     - 0.11.7
+
+   * - PyYAML
+     - 6.0.3
+
+   * - NumPy
+     - 2.4.1
+
+   * - Landlab
+     - 2.10.2.dev0
+
+   * - mpi4py
+     - 4.1.1
 
 Source code
 -----------------------------

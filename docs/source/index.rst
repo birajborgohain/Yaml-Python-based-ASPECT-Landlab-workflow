@@ -12,5 +12,6 @@ A Python-based framework for coupling geodynamic simulations
    installation
    experiments.yaml
    run_ASPECT.py
+   script/index
    
 
